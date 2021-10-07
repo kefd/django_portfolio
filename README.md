@@ -7,3 +7,7 @@
 `pip install django`
 
 `pip install pillow`
+
+`django-admin startproject nome_projeto .`
+
+`python manage.py runserver`
