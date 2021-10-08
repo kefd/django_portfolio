@@ -2,4 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def cadastro(request):
-  return HttpResponse('teste')
+  return render(request, 'cadastro.html')
+
+def login(request): 
+  return render(request, 'login.html')
