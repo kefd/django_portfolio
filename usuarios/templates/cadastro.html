@@ -4,6 +4,27 @@
 
 {% block 'body' %}
   <div class="container">
+  <br>
+      {% if status == '1' %}
+        <div class="alert alert-danger" role="alert">
+          Sua senha deve que ter entre 8 e 12 caracteres.
+        </div>
+      {% endif %}
+      {% if status == '2' %}
+        <div class="alert alert-danger" role="alert">
+          Email e nome nao podem ser vazios
+        </div>
+      {% endif %}
+      {% if status == '3' %}
+        <div class="alert alert-danger" role="alert">
+          Esse email ja esta cadastrado no sistema
+        </div>
+      {% endif %}
+      {% if status == '0' %}
+        <div class="alert alert-success" role="alert">
+          Cadastro realizado com sucesso!
+        </div>
+      {% endif %}
     <div class="row">
       <div class="col-md-3">
       
@@ -12,7 +33,7 @@
         <br>
         <h1>Cadastre-se</h1>
         <hr>
-        <form method="POST" action="#">
+        <form method="POST" action="{% url 'valida_cadastro' %}">{% csrf_token %}
           <label>Digite seu nome:</label>
           <input class="form-control" type="text" placeholder="Nome..." name = "nome">
           <br>
